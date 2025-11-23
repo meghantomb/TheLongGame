@@ -10,6 +10,7 @@ namespace TheLongGame
             string playerName = Console.ReadLine();
             string path = "" + playerName + ".txt";
             int score = 0;
+            //will get the previous score, if the file doesn't exist, goes in the catch block
             try
             {
                 StreamReader reader = new StreamReader(path);
@@ -35,6 +36,7 @@ namespace TheLongGame
                 nextKey = Console.ReadKey().Key;
             }
 
+            //will make the file if it doesn't already exist
             File.AppendAllText(path, "" + score);
         }
     }
